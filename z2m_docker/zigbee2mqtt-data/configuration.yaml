@@ -1,0 +1,18 @@
+permit_join: true
+mqtt:
+  base_topic: zigbee2mqtt
+  include_device_information: true
+  #path to your local mqtt server. Change it if you have trouble connecting
+  server: mqtt://0:1883
+  keepalive: 60
+  reject_unauthorized: true
+  version: 4
+#information about serial can be found in "ZigbeeControlPanel/Z2M and ZHA" tab
+serial:
+  port: tcp://192.168.2.2:6638
+  baudrate: 115200
+  adapter: ezsp
+#Zigbee2Mqtt has it's own frontend that you can access through localhost:8080
+frontend:
+  port: 8080
+

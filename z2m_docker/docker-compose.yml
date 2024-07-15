@@ -1,0 +1,29 @@
+version: '3.8'
+services:
+  mqtt:
+    image: eclipse-mosquitto:2.0
+    hostname: mosquitto
+    restart: unless-stopped
+    volumes:
+      - "./mosquitto-data:/mosquitto"
+      - "./mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf"
+    ports:
+      - "1883:1883"
+      - "9001:9001"
+    command: "mosquitto -c /mosquitto-no-auth.conf"
+
+  zigbee2mqtt:
+    container_name: zigbee2mqtt
+    restart: unless-stopped
+    image: koenkk/zigbee2mqtt
+    volumes:
+      - ./zigbee2mqtt-data:/app/data
+      - /run/udev:/run/udev:ro
+    ports:
+      - 8080:8080
+    #Using network_mode is the simplest method to connect WireGuard and Zigbee2MQTT together.
+    network_mode: host
+    #The SERIAL_PORT setting uses the default port 6638, which can be found in the ZigbeeControlPanel/Z2M and ZHA tab
+    #IP address is the one that was peered through WireGuard.
+    environment:
+      - SERIAL_PORT=tcp://192.168.2.2:6638

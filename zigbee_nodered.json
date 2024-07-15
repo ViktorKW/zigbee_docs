@@ -1,0 +1,83 @@
+[
+    {
+        "id": "ae33c40bf924b581",
+        "type": "mqtt in",
+        "z": "a120f4f.e30b208",
+        "name": "",
+        "topic": "zigbee2mqtt/#",
+        "qos": "1",
+        "datatype": "utf8",
+        "broker": "0454285a60e1f236",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 750,
+        "y": 80,
+        "wires": [
+            [
+                "0680f035d71f43b9"
+            ]
+        ]
+    },
+    {
+        "id": "d56a17aa32503a52",
+        "type": "debug",
+        "z": "a120f4f.e30b208",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1050,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "0680f035d71f43b9",
+        "type": "json",
+        "z": "a120f4f.e30b208",
+        "name": "",
+        "property": "payload",
+        "action": "obj",
+        "pretty": false,
+        "x": 910,
+        "y": 80,
+        "wires": [
+            [
+                "d56a17aa32503a52"
+            ]
+        ]
+    },
+    {
+        "id": "0454285a60e1f236",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    }
+]

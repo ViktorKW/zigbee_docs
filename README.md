@@ -65,7 +65,7 @@ ip address add dev wg0 192.168.2.1 peer 192.168.2.2
 
 ### Configure the interface
 ```
-wg set wg0 listen-port 51820 private-key /path/to/host-private-key peer /path/to/zigbeePublic-key allowed-ips 192.168.2.2 endpoint [actual ip of your zigbee coord]:51820
+wg set wg0 listen-port 51820 private-key /path/to/host-private-key peer zigbeePublicKeyAsTextABCD12345 allowed-ips 192.168.2.2 endpoint [actual ip of your zigbee coord]:51820
 ```
 
 ### Launch Wireguard wg0 interface

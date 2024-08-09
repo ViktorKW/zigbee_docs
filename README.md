@@ -1,4 +1,4 @@
-# Zigbee documenation
+# Zigbee documentation
 In this document, I want to explain what Zigbee is and how to work with it. The main goal is to explain how to configure a Zigbee coordinator and connect it to your remote server for further use with Node-RED.
 
 ## What is Zigbee
